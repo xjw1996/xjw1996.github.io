@@ -564,47 +564,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p>docker centos 安装教程<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官方链接</a></p>
-<ol>
-<li>卸载可能存在的之前版本</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">$ sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>安装依赖</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">$ sudo yum install -y yum-utils
-
-$ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="3">
-<li>安装docker engine</li>
-</ol>
-<p><code>$ sudo yum install docker-ce docker-ce-cli containerd.io</code></p>
-<ol start="4">
-<li>重启docker</li>
-</ol>
-<p><code>sudo systemctl start docker</code></p>
-<ol start="5">
-<li>查看docker版本</li>
-</ol>
-<p><code>docker -v</code></p>
-<ol start="6">
-<li>查看docker镜像</li>
-</ol>
-<p><code>docker images</code></p>
-<ol start="7">
-<li>设置开机自动启动docker</li>
-</ol>
-<p><code>sudo systemctl enable docker</code></p>
-<h1 id="docker-hub"><a href="#docker-hub" class="headerlink" title="docker hub"></a>docker hub</h1><ul>
+                <h1 id="docker-hub"><a href="#docker-hub" class="headerlink" title="docker hub"></a>docker hub</h1><ul>
 <li><p>下载MySQL镜像</p>
 <p><code>sudo docker pull mysql:5.7</code></p>
 </li>
@@ -621,9 +581,9 @@ $ sudo yum-config-manager \
 <blockquote>
 <p>-v /mydata/mysql/log:/var/log/mysql <br>-v /mydata/mysql/data:/var/lib/mysql <br>-v /mydata/mysql/conf:/etc/mysql <br>-e MYSQL_ROOT_PASSWORD=root <br>-d mysql:5.7</p>
 </blockquote>
-<p>​    -p 3306:3306为端口映射</p>
+<pre><code>-p 3306:3306为端口映射</code></pre>
 <p>-v 是目录挂载 具体意思是在本体linux下的/mydata/mysql/log  ：冒号就是与容器内部的/var/log/mysql进行挂载，直白的说容器内部log文件的记录 会直接反应到linux指定目录下，容器内不的日志，linux在外面也能够看到</p>
-<p><img src="C:\Users\jinue\Desktop\新建文件夹\picture\微信图片_20210120013446.png" alt="微信图片_20210120013446"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210120010836980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>如上图所示，MySQL容器挂载的各个log，数据，配置文件dg在外面root linux里面也是可以访问到的，容器外部对挂载文件直接修改，是可以同步到容器</p>
 <ul>
 <li><p>查看docker运行中的容器</p>
@@ -633,22 +593,24 @@ $ sudo yum-config-manager \
 <ul>
 <li><code>docker exec -it docker容器的前三位id\或者容器的名字 /bin/bash</code></li>
 </ul>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041010738.png" alt="image-20201206041010738"></p>
+<p><img src="https://img-blog.csdnimg.cn/2021012001085931.png" alt="在这里插入图片描述"></p>
 <ul>
 <li>就会发现我们进入容器内部的环境当中，因为每一个容器都是一个小型的linux系统，如上图为哦们已经进入到MySQL容器的内部</li>
 </ul>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041301662.png" alt="image-20201206041301662"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210120010917607.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
 <ul>
 <li>查看目录结构会发现，他就是一个完整的一个linux的目录结构</li>
 </ul>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041123447.png" alt="image-20201206041123447"></p>
-</li>
+<p><img src="https://img-blog.csdnimg.cn/20210120011025911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
 <li><p>查看MySQL装在了那个位置</p>
-<p><code>whereis mysql</code></p>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041528226.png" alt="image-20201206041528226"></p>
+<p><code>whereis mysql</code><br><img src="https://img-blog.csdnimg.cn/20210120011051134.png" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uuUv48u2-1611076069706)(C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041528226.png)]"></p>
+</li>
+<li><p>下图是docker容器文件挂载与端口映射<br><img src="https://img-blog.csdnimg.cn/20210120011126996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 </li>
 </ul>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041628752.png" alt="image-20201206041628752"></p>
 <p>访问linux的3306接口也就能够访问到MySQL容器的3306的端口</p>
 <p>cd conf      vi my.cnf</p>
 <ul>
@@ -665,7 +627,7 @@ $ sudo yum-config-manager \
 <p>collation-server=utf8_unicode_ci</p>
 <p>skip-character-set-client-handshake</p>
 <p>skip-name-resolve</p>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20210103002604957.png" alt="image-20210103002604957"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210120011245615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ul>
 <li><p>docker 重启mysql</p>
 <p><code>docker restart mysql</code></p>
@@ -910,18 +872,17 @@ $ sudo yum-config-manager \
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/06/docker-mysql/">
+                <a href="/2021/01/06/renren-fast/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="基于renren-fast开发，负载均衡缺少pom文件大坑">
                         
-                        <span class="card-title">Docker里面导入MySQL</span>
+                        <span class="card-title">基于renren-fast开发，负载均衡缺少pom文件大坑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -931,22 +892,21 @@ $ sudo yum-config-manager \
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
+                            <a href="/categories/renren-fast/" class="post-category">
+                                    renren-fast
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
