@@ -564,7 +564,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p> -用USB引导盘装好系统以后，选英语语言和英语键盘并且加入字体库命令</p>
+                <ul>
+<li>用USB引导盘装好系统以后，选英语语言和英语键盘并且加入字体库命令</li>
+</ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ls</span> /usr/lib/locale
 $ <span class="token function">sudo</span> locale-gen - -purge - -no-archive<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol>
@@ -609,14 +611,13 @@ $ <span class="token function">sudo</span> locale-gen - -purge - -no-archive<spa
 <ol start="2">
 <li>NVIDIA  Driver 安装</li>
 </ol>
-<ul>
-<li>在google搜索nvidia drivers找到官网，下载驱动<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> purge nvidia*
+<p>在google搜索nvidia drivers找到官网，下载驱动</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> purge nvidia*
 $ <span class="token function">sudo</span> <span class="token function">apt-get</span> autoremove
 $ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> build-essential gcc-multilib dkms
 $ <span class="token function">sudo</span> <span class="token function">touch</span> /etc/modprobe.d/blacklist-nouveau.conf
 $ <span class="token function">sudo</span> gedit /etc/modprobe.d/blacklist-nouveau.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-输入<br>blacklist nouveau<br>options nouveau modeset=0<br>进入/etc/default 找到grub文件，在此⻚打开terminal，输入命令</li>
-</ul>
+<p>输入<br>blacklist nouveau<br>options nouveau modeset=0<br>进入/etc/default 找到grub文件，在此⻚打开terminal，输入命令</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> gedit grub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 GRUB-CMDLINE-LINUX-DEFAULT=“quiet splash“处的splash 后加nomodeset</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> update-initramfs -u 
@@ -629,10 +630,9 @@ $ <span class="token function">sudo</span> ./NVIDIA-Linux-x86_64-450.57.run<span
 <ol start="3">
 <li>安装CUDA</li>
 </ol>
-<ul>
-<li>去官网找到相应版本，installer Type选deb(local)<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">nano</span> /etc/profile.d/cuda.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-输入</li>
-</ul>
+<p>去官网找到相应版本，installer Type选deb(local)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">nano</span> /etc/profile.d/cuda.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>输入</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/cuda/bin
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">CUDADIR</span><span class="token operator">=</span>/usr/local/cuda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">chmod</span> +x /etc/profile.d/cuda.sh 
