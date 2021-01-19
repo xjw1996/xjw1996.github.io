@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="Docker里面导入MySQL, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>Docker里面导入MySQL | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Docker里面导入MySQL</h1>
                 </div>
             </div>
         </div>
@@ -524,6 +524,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/docker/" class="post-category">
+                                docker
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -531,7 +540,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-20
+                    2019-12-06
                 </div>
                 
 
@@ -555,12 +564,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-css" data-language="css"><code class="language-css">
-<span class="token property">title</span><span class="token punctuation">:</span> 在Docker里面部署MySQL
-<span class="token property">date</span><span class="token punctuation">:</span> 2020-03-15 19<span class="token punctuation">:</span>00<span class="token punctuation">:</span>41
-<span class="token property">tags</span><span class="token punctuation">:</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p>docker centos 安装教程<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官方链接</a></p>
+                <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p>docker centos 安装教程<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官方链接</a></p>
 <ol>
 <li>卸载可能存在的之前版本</li>
 </ol>
@@ -612,16 +616,14 @@ $ sudo yum-config-manager \
 </li>
 <li><p>启动容器</p>
 <p>docker run -p 3306:3306 –name mysql \</p>
-<pre class="line-numbers language-docker" data-language="docker"><div class="caption"><span>run -p 3306:3306 --name mysql \</span></div><code class="language-docker">  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
 <blockquote>
 <p>-v /mydata/mysql/log:/var/log/mysql <br>-v /mydata/mysql/data:/var/lib/mysql <br>-v /mydata/mysql/conf:/etc/mysql <br>-e MYSQL_ROOT_PASSWORD=root <br>-d mysql:5.7</p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>​    -p 3306:3306为端口映射</p>
-</li>
-</ul>
 <p>-v 是目录挂载 具体意思是在本体linux下的/mydata/mysql/log  ：冒号就是与容器内部的/var/log/mysql进行挂载，直白的说容器内部log文件的记录 会直接反应到linux指定目录下，容器内不的日志，linux在外面也能够看到</p>
-<p><img src="C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206042715896.png" alt="image-20201206042715896"></p>
+<p><img src="C:\Users\jinue\Desktop\新建文件夹\picture\微信图片_20210120013446.png" alt="微信图片_20210120013446"></p>
 <p>如上图所示，MySQL容器挂载的各个log，数据，配置文件dg在外面root linux里面也是可以访问到的，容器外部对挂载文件直接修改，是可以同步到容器</p>
 <ul>
 <li><p>查看docker运行中的容器</p>
@@ -701,7 +703,7 @@ $ sudo yum-config-manager \
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/01/20/docker-mysql/">https://xjw1996.github.io/jingwei.github.io/2021/01/20/docker-mysql/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/">https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -913,13 +915,13 @@ $ sudo yum-config-manager \
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/20/docker-mysql/">
+                <a href="/2019/12/06/docker-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Docker里面导入MySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -930,12 +932,16 @@ $ sudo yum-config-manager \
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -951,13 +957,13 @@ $ sudo yum-config-manager \
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/20/docker-mysql/">
+                <a href="/2019/12/06/docker-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Docker里面导入MySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -968,12 +974,16 @@ $ sudo yum-config-manager \
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
+                                </a>
+                            
                             
                         </span>
                     </div>
