@@ -6,7 +6,7 @@
   <link href="https://xjw1996.github.io/jingwei.github.io/atom.xml" rel="self"/>
   
   <link href="https://xjw1996.github.io/jingwei.github.io/"/>
-  <updated>2021-01-19T17:14:55.317Z</updated>
+  <updated>2021-01-23T18:57:26.114Z</updated>
   <id>https://xjw1996.github.io/jingwei.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xjw1996.github.io/jingwei.github.io/2021/01/06/renren-fast/"/>
     <id>https://xjw1996.github.io/jingwei.github.io/2021/01/06/renren-fast/</id>
     <published>2021-01-06T03:16:12.000Z</published>
-    <updated>2021-01-19T17:14:55.317Z</updated>
+    <updated>2021-01-23T18:57:26.114Z</updated>
     
     
       
@@ -41,11 +41,34 @@
   </entry>
   
   <entry>
+    <title>MySQL编码问题的坑</title>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/</id>
+    <published>2020-12-06T03:16:12.000Z</published>
+    <updated>2021-01-23T18:58:17.018Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MySQL编码问题的坑&quot;&gt;&lt;a href=&quot;#MySQL编码问题的坑&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://xjw1996.github.io/jingwei.github.io/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu安装 NVIDIA Driver，CUDA, cuDNN</title>
     <link href="https://xjw1996.github.io/jingwei.github.io/2020/04/06/ubuntu-an-zhuang/"/>
     <id>https://xjw1996.github.io/jingwei.github.io/2020/04/06/ubuntu-an-zhuang/</id>
     <published>2020-04-06T03:16:12.000Z</published>
-    <updated>2021-01-19T21:02:55.563Z</updated>
+    <updated>2021-01-23T18:57:32.150Z</updated>
     
     
       
@@ -71,7 +94,7 @@
     <link href="https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/"/>
     <id>https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/</id>
     <published>2019-12-06T03:16:12.000Z</published>
-    <updated>2021-01-19T17:21:36.554Z</updated>
+    <updated>2021-01-23T18:57:09.658Z</updated>
     
     
       

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker里面导入MySQL, Hexo">
+    <meta name="keywords" content="MySQL编码问题的坑, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker里面导入MySQL | Hexo</title>
+    <title>MySQL编码问题的坑 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker里面导入MySQL</h1>
+                    <h1 class="description center-align post-title">MySQL编码问题的坑</h1>
                 </div>
             </div>
         </div>
@@ -527,8 +527,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/docker/" class="post-category">
-                                docker
+                            <a href="/categories/MySQL/" class="post-category">
+                                MySQL
                             </a>
                         
                     </div>
@@ -540,7 +540,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-06
+                    2020-12-06
                 </div>
                 
 
@@ -564,86 +564,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker-hub"><a href="#docker-hub" class="headerlink" title="docker hub"></a>docker hub</h1><ul>
-<li><p>下载MySQL镜像</p>
-<p><code>sudo docker pull mysql:5.7</code></p>
-</li>
-<li><p>检查下载好的镜像</p>
-<p><code>sudo docker images</code></p>
-</li>
-<li><p>切换root的用户</p>
-<p><code>su root</code></p>
-</li>
-<li><p>启动容器</p>
-<p>docker run -p 3306:3306 –name mysql \</p>
-</li>
+                <h1 id="MySQL编码问题的坑"><a href="#MySQL编码问题的坑" class="headerlink" title="MySQL编码问题的坑"></a>MySQL编码问题的坑</h1><ul>
+<li>缘由通过前端页码往后端post请求数据更改，中文出现“？？？”的问题<img src="https://img-blog.csdnimg.cn/20210123192905122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></li>
+<li>进入docker MySQL的交互容器内</li>
 </ul>
-<blockquote>
-<p>-v /mydata/mysql/log:/var/log/mysql <br>-v /mydata/mysql/data:/var/lib/mysql <br>-v /mydata/mysql/conf:/etc/mysql <br>-e MYSQL_ROOT_PASSWORD=root <br>-d mysql:5.7</p>
-</blockquote>
-<pre><code>-p 3306:3306为端口映射</code></pre>
-<p>-v 是目录挂载 具体意思是在本体linux下的/mydata/mysql/log  ：冒号就是与容器内部的/var/log/mysql进行挂载，直白的说容器内部log文件的记录 会直接反应到linux指定目录下，容器内不的日志，linux在外面也能够看到</p>
-<p><img src="https://img-blog.csdnimg.cn/20210120010836980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<p>如上图所示，MySQL容器挂载的各个log，数据，配置文件dg在外面root linux里面也是可以访问到的，容器外部对挂载文件直接修改，是可以同步到容器</p>
-<ul>
-<li><p>查看docker运行中的容器</p>
-<p><code>docker ps</code></p>
-</li>
-<li><p>进入MySQL容器内部</p>
-<ul>
-<li><code>docker exec -it docker容器的前三位id\或者容器的名字 /bin/bash</code></li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/2021012001085931.png"></p>
-<ul>
-<li>就会发现我们进入容器内部的环境当中，因为每一个容器都是一个小型的linux系统，如上图为哦们已经进入到MySQL容器的内部</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20210120010917607.png"></p>
-</li>
-</ul>
-<ul>
-<li>查看目录结构会发现，他就是一个完整的一个linux的目录结构</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20210120011025911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<ul>
-<li><p>查看MySQL装在了那个位置</p>
-<p><code>whereis mysql</code><br><img src="https://img-blog.csdnimg.cn/20210120011051134.png" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uuUv48u2-1611076069706)(C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041528226.png)]"></p>
-</li>
-<li><p>下图是docker容器文件挂载与端口映射<br><img src="https://img-blog.csdnimg.cn/20210120011126996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-</li>
-</ul>
-<p>访问linux的3306接口也就能够访问到MySQL容器的3306的端口</p>
-<p>cd conf      vi my.cnf</p>
-<ul>
-<li>复制下面配置文件</li>
-</ul>
-<p>[client]</p>
-<p>default-character-set=utf8</p>
-<p>[mysql]</p>
-<p>default-character-set=utf8</p>
-<p>[mysqld]</p>
-<p>init_connect=’SET collation_connection = utf8_unicode_ci’</p>
-<p>init_connect=’SET NAMES utf8’</p>
-<p>character-set-server=utf8</p>
-<p>collation-server=utf8_unicode_ci</p>
-<p>skip-character-set-client-handshake</p>
-<p>skip-name-resolve</p>
-<p><img src="https://img-blog.csdnimg.cn/20210120011245615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<ul>
-<li><p>docker 重启mysql</p>
-<p><code>docker restart mysql</code></p>
-</li>
-</ul>
-<ul>
-<li><p>进入交互模式</p>
-<p><code>docker exec -it mysql /bin/bash</code></p>
-<p>查看linux上配置的文件是否同步到位</p>
-<ul>
-<li>进入MySQL内部查看配置</li>
-<li><code>mysql -u root -p</code></li>
-</ul>
-</li>
-</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> docker <span class="token builtin class-name">exec</span> -it mysql /bin/bash
+$ mysql -u root -p
 
+<span class="token comment"># 查看编码方式</span>
+$ show variables like <span class="token string">'character\_set\_%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> <img src="https://img-blog.csdnimg.cn/20210123194719226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/2021012401044694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="service mysqld restart"></p>
+<p>储存的中文数据什么也显示不出来，大部分都为latin1，猜想可能这块有问题。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ SET character_set_client <span class="token operator">=</span> utf8<span class="token punctuation">;</span>
+$ SET character_set_connection <span class="token operator">=</span> utf8<span class="token punctuation">;</span>
+$ SET character_set_database <span class="token operator">=</span> utf8<span class="token punctuation">;</span>
+$ SET character_set_results <span class="token operator">=</span> utf8<span class="token punctuation">;</span>
+$ SET character_set_server <span class="token operator">=</span> utf8<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后重启MySQL</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">service</span> mysql restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后重新查看MySQL的编码形式，然而并没有卵用，MySQL依旧是打不死的小强，无论你你怎么能他依然latin1屹立不倒</p>
+<ul>
+<li><strong>所以要找到MySQL的my.cof配置文件的位置，对配置文件进行改动</strong><br>如下面代码所示，我认为这个是中文不出现乱码的最好的配置</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+
+default-character-set<span class="token operator">=</span>utf8
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+
+default-character-set<span class="token operator">=</span>utf8
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span>’SET collation_connection <span class="token operator">=</span> utf8_unicode_ci’
+
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span>’SET NAMES utf8’
+
+character-set-server<span class="token operator">=</span>utf8
+
+collation-server<span class="token operator">=</span>utf8_unicode_ci
+
+skip-character-set-client-handshake
+
+skip-name-resolve<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所以我又重启了MySQL，看了一遍编码方式我的天latin1纹丝不动我都要吐血了。</p>
+<p>查阅了很多资料都是废话连篇，千篇一律。</p>
+<p>所以思考是不是配置文件放错地方，导致MySQL根本没有察觉到配置文件的存在，在这里我要说一下我的配置文件原先设置的位置是 etc/mysql/my.conf<br>一般配置文件是直接放在etc下面的，所以etc下vim了个my.conf，把utf8的配置粘贴了进去，中心启动MySQL服务器，<br><img src="https://img-blog.csdnimg.cn/20210124024319195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>清一色utf8，嘎嘎舒服<br>所以说MySQL的my.cnf这个配置文件放的地方<br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>重要的事说三遍</p>
+<p><img src="https://img-blog.csdnimg.cn/20210124024434599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>前端页码发送post的请求，刷新返回来的数据也显示中文了哈哈。。。。</p>
+<h2 id="一点应该知道的基础知识"><a href="#一点应该知道的基础知识" class="headerlink" title="一点应该知道的基础知识"></a>一点应该知道的基础知识</h2><ul>
+<li>小插曲 如果想查看MySQL的配置文件要到/etc/mysql/my.cnf的地方 cat一下可以看到配置信息，<strong>MySQL配置文件在Windows下叫my.ini，在MySQL的安装根目录下；在Linux下叫my.cnf，该文件位于/etc/my.cnf。</strong></li>
+<li>我们在创建基础容器之后，进入容器，进行编辑配置文件的时候，需要使用vim或者vi命令，但是会出现：这是因为vim没有安装。</li>
+</ul>
+<p>安装vim就好啦</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">apt-get</span> update
+$ <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">vim</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="MySQL的基本操作方法"><a href="#MySQL的基本操作方法" class="headerlink" title="MySQL的基本操作方法"></a>MySQL的基本操作方法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mysql -u root -p
+$ SHOW DATABASES<span class="token punctuation">;</span>
+$ USE 数据库名称
+$ show tables<span class="token punctuation">;</span>
+$ <span class="token keyword">select</span> * from 表名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -669,7 +648,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/">https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/">https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -880,6 +859,47 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/01/06/renren-fast/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="基于renren-fast开发，负载均衡缺少pom文件大坑">
+                        
+                        <span class="card-title">基于renren-fast开发，负载均衡缺少pom文件大坑</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/renren-fast/" class="post-category">
+                                    renren-fast
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/04/06/ubuntu-an-zhuang/">
                     <div class="card-image">
                         
@@ -896,9 +916,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -911,48 +931,6 @@
                         </span>
                     </div>
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/12/06/docker-mysql/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
-                        
-                        <span class="card-title">Docker里面导入MySQL</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
