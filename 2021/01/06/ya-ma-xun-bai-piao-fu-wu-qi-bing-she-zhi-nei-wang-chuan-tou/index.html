@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于renren-fast开发，负载均衡缺少pom文件大坑, Hexo">
+    <meta name="keywords" content="亚马逊白嫖12个月服务器并设置内网穿透, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于renren-fast开发，负载均衡缺少pom文件大坑 | Hexo</title>
+    <title>亚马逊白嫖12个月服务器并设置内网穿透 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于renren-fast开发，负载均衡缺少pom文件大坑</h1>
+                    <h1 class="description center-align post-title">亚马逊白嫖12个月服务器并设置内网穿透</h1>
                 </div>
             </div>
         </div>
@@ -519,8 +519,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                <span class="chip bg-color">后端</span>
+                            <a href="/tags/frp/">
+                                <span class="chip bg-color">frp</span>
                             </a>
                         
                     </div>
@@ -531,8 +531,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/renren-fast/" class="post-category">
-                                renren-fast
+                            <a href="/categories/server/" class="post-category">
+                                server
                             </a>
                         
                     </div>
@@ -568,21 +568,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>@通过网关连接renren-fast时候报的错</p>
-<h1 id="Error-creating-bean-with-name-‘ribbonLoadBalancingHttpClient’"><a href="#Error-creating-bean-with-name-‘ribbonLoadBalancingHttpClient’" class="headerlink" title="Error creating bean with name ‘ribbonLoadBalancingHttpClient’"></a>Error creating bean with name ‘ribbonLoadBalancingHttpClient’</h1><p>通过spring gateway 网关把请求分配给renren-fast的时候出现了以下错误。</p>
-<pre class="line-numbers language-none"><code class="language-none">2021-01-06 22:47:02.793 ERROR 14024 --- [ctor-http-nio-2] a.w.r.e.AbstractErrorWebExceptionHandler : [b41c453c] 500 Server Error for HTTP GET "/api/captcha.jpg?uuid=197cc4fb-3695-43cd-8293-8cf4dc31b91f"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>couse by 1</p>
-<pre class="line-numbers language-none"><code class="language-none">Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ribbonLoadBalancer' defined in org.springframework.cloud.netflix.ribbon.RibbonClientConfiguration: Unsatisfied dependency expressed through method 'ribbonLoadBalancer' parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ribbonServerListFilter' defined in org.springframework.cloud.netflix.ribbon.RibbonClientConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netflix.loadbalancer.ServerListFilter]: Factory method 'ribbonServerListFilter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/netflix/servo/monitor/Monitors<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>couse by 2</p>
-<pre class="line-numbers language-none"><code class="language-none">Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ribbonServerListFilter' defined in org.springframework.cloud.netflix.ribbon.RibbonClientConfiguration: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netflix.loadbalancer.ServerListFilter]: Factory method 'ribbonServerListFilter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/netflix/servo/monitor/Monitors<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20210106222317765.png">根本没有这个东西</p>
-<p>所以参考<br>链接: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ye-feng-yu/p/11106006.html">link</a>.的博客gateway ribbon 负载均衡这块，发现自己的pom文件里没有如下依赖</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-cloud-starter-netflix-ribbon&lt;/artifactId&gt;
-    &lt;version&gt;2.1.0.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这个加上，重新reload Maven 重跑gateway<br><img src="https://img-blog.csdnimg.cn/2021010700364017.png"><br>原先获取图片的地方由500 变成了 200  成功了 </p>
+                <h1 id="亚马逊白嫖12个月服务器并设置内网穿透"><a href="#亚马逊白嫖12个月服务器并设置内网穿透" class="headerlink" title="亚马逊白嫖12个月服务器并设置内网穿透"></a>亚马逊白嫖12个月服务器并设置内网穿透</h1><ul>
+<li><p>缘由是因为学校研究室的服务器，是隐藏在关西大学<strong>NAT</strong>和<strong>Firewall</strong>的背后，如果没有公开的IP地址是不能访问到研究室的服务器上传文件或者获取文件等等，所以就考虑到Google和AWS等云服务租借服务器的话，每个服务器都会有自己的公有ip地址。而且亚马逊云服务对于<strong>初次</strong>注册账号的用户可以免费使用12个月的服务器，当然啦免费的么，服务器的配置是很低的。内网穿透的原理以及AWS的server如下图所示<img src="https://img-blog.csdnimg.cn/20210124204354864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="内网穿透"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210124204148550.png" alt="AWS免费server"></p>
+</li>
+<li><p>下一步安装Docker，我选的是Ubuntu所以安装的时候选Linux<br>这步是如果之前有过安装docker或者有老版本的docker，那么卸载它</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> remove docker docker-engine docker.io containerd runc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设置仓库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+    apt-transport-https <span class="token punctuation">\</span>
+    ca-certificates <span class="token punctuation">\</span>
+    <span class="token function">curl</span> <span class="token punctuation">\</span>
+    gnupg-agent <span class="token punctuation">\</span>
+    software-properties-common<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>添加docker GPG官方密钥</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>验证</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> apt-key fingerprint 0EBFCD88
+
+pub   rsa4096 <span class="token number">2017</span>-02-22 <span class="token punctuation">[</span>SCEA<span class="token punctuation">]</span>
+      9DC8 <span class="token number">5822</span> 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           <span class="token punctuation">[</span> unknown<span class="token punctuation">]</span> Docker Release <span class="token punctuation">(</span>CE deb<span class="token punctuation">)</span> <span class="token operator">&lt;</span>docker@docker.com<span class="token operator">&gt;</span>
+sub   rsa4096 <span class="token number">2017</span>-02-22 <span class="token punctuation">[</span>S<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>设置存储库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> add-apt-repository <span class="token punctuation">\</span>
+   <span class="token string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> \
+   stable"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装docker引擎</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装Docker 可视化工具<strong>Portainer</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker search portainer <span class="token operator">|</span><span class="token function">head</span> -n <span class="token number">3</span>
+$ docker volume create portainer_data
+$ docker run -d -p <span class="token number">9000</span>:9000 --name<span class="token operator">=</span>portainer --restart<span class="token operator">=</span>always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+20db26b67b791648c2ef6aee444a5226a9c897ebcf0160050e722dbf4a4906e3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个地方，<strong>http://公网地址:9000</strong><br>如果网页没有打开，或者连接不上那是因为9000的端口没有开放，要去AWS管理台自己的实例的安全群组哪里开放9000端口,设置完之后就应该出现登录页面，第一次需自行设置账户密码。<br><img src="https://img-blog.csdnimg.cn/20210124210103904.png" alt="开放9000端口"><br><img src="https://img-blog.csdnimg.cn/20210124210248142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>下一步Docker hub里找到frps有关的镜像在Portainer里面进行拉取<br><img src="https://img-blog.csdnimg.cn/20210124210649187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="拉取镜像"></li>
+<li>设置参数在Containers里面就会看到AWSserver运行的两个docker 容器</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20210124210806883.png" alt="docker容器"></p>
 
                 
             </div>
@@ -609,7 +639,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/01/06/renren-fast/">https://xjw1996.github.io/jingwei.github.io/2021/01/06/renren-fast/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/">https://xjw1996.github.io/jingwei.github.io/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -647,8 +677,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                    <span class="chip bg-color">后端</span>
+                                <a href="/tags/frp/">
+                                    <span class="chip bg-color">frp</span>
                                 </a>
                             
                         </div>
@@ -820,10 +850,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2021/01/06/renren-fast/">
                     <div class="card-image">
@@ -841,9 +870,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -856,7 +885,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -875,13 +903,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/">
+                <a href="/2020/12/06/mysql-bian-ma-de-keng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="亚马逊白嫖12个月服务器并设置内网穿透">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="MySQL编码问题的坑">
                         
-                        <span class="card-title">亚马逊白嫖12个月服务器并设置内网穿透</span>
+                        <span class="card-title">MySQL编码问题的坑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -892,14 +920,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/server/" class="post-category">
-                                    server
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -909,8 +937,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/frp/">
-                        <span class="chip bg-color">frp</span>
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
                     </a>
                     
                 </div>

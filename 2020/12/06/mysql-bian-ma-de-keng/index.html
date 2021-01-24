@@ -613,8 +613,8 @@ skip-character-set-client-handshake
 skip-name-resolve<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以我又重启了MySQL，看了一遍编码方式我的天latin1纹丝不动我都要吐血了。</p>
 <p>查阅了很多资料都是废话连篇，千篇一律。</p>
-<p>所以思考是不是配置文件放错地方，导致MySQL根本没有察觉到配置文件的存在，在这里我要说一下我的配置文件原先设置的位置是 etc/mysql/my.conf<br>一般配置文件是直接放在etc下面的，所以etc下vim了个my.conf，把utf8的配置粘贴了进去，中心启动MySQL服务器，<br><img src="https://img-blog.csdnimg.cn/20210124024319195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>清一色utf8，嘎嘎舒服<br>所以说MySQL的my.cnf这个配置文件放的地方<br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>重要的事说三遍</p>
-<p><img src="https://img-blog.csdnimg.cn/20210124024434599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>前端页码发送post的请求，刷新返回来的数据也显示中文了哈哈。。。。</p>
+<p>所以思考是不是配置文件放错地方，导致MySQL根本没有察觉到配置文件的存在，在这里我要说一下我的配置文件原先设置的位置是 etc/mysql/my.conf<br>一般配置文件是直接放在etc下面的，所以etc下vim了个my.conf，把utf8的配置粘贴了进去，中心启动MySQL服务器，<br><img src="https://img-blog.csdnimg.cn/20210124024319195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br>清一色utf8，嘎嘎舒服<br>所以说MySQL的my.cnf这个配置文件放的地方<br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>my.cnf配置文件位置<font color="#dd0000"><strong>超级重要</strong></font><br><br>重要的事说三遍</p>
+<p><img src="https://img-blog.csdnimg.cn/20210124024434599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br>前端页码发送post的请求，刷新返回来的数据也显示中文了哈哈。。。。</p>
 <h2 id="一点应该知道的基础知识"><a href="#一点应该知道的基础知识" class="headerlink" title="一点应该知道的基础知识"></a>一点应该知道的基础知识</h2><ul>
 <li>小插曲 如果想查看MySQL的配置文件要到/etc/mysql/my.cnf的地方 cat一下可以看到配置信息，<strong>MySQL配置文件在Windows下叫my.ini，在MySQL的安装根目录下；在Linux下叫my.cnf，该文件位于/etc/my.cnf。</strong></li>
 <li>我们在创建基础容器之后，进入容器，进行编辑配置文件的时候，需要使用vim或者vi命令，但是会出现：这是因为vim没有安装。</li>
@@ -867,13 +867,13 @@ $ <span class="token keyword">select</span> * from 表名<span class="token punc
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/06/renren-fast/">
+                <a href="/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="基于renren-fast开发，负载均衡缺少pom文件大坑">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="亚马逊白嫖12个月服务器并设置内网穿透">
                         
-                        <span class="card-title">基于renren-fast开发，负载均衡缺少pom文件大坑</span>
+                        <span class="card-title">亚马逊白嫖12个月服务器并设置内网穿透</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -890,8 +890,8 @@ $ <span class="token keyword">select</span> * from 表名<span class="token punc
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/renren-fast/" class="post-category">
-                                    renren-fast
+                            <a href="/categories/server/" class="post-category">
+                                    server
                                 </a>
                             
                             
@@ -901,8 +901,8 @@ $ <span class="token keyword">select</span> * from 表名<span class="token punc
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
+                    <a href="/tags/frp/">
+                        <span class="chip bg-color">frp</span>
                     </a>
                     
                 </div>
