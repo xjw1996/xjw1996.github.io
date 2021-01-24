@@ -6,7 +6,7 @@
   <link href="https://xjw1996.github.io/jingwei.github.io/atom.xml" rel="self"/>
   
   <link href="https://xjw1996.github.io/jingwei.github.io/"/>
-  <updated>2021-01-24T12:27:11.354Z</updated>
+  <updated>2021-01-24T13:26:22.159Z</updated>
   <id>https://xjw1996.github.io/jingwei.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>亚马逊白嫖12个月服务器并设置内网穿透</title>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2021/01/26/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2021/01/26/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/</id>
+    <published>2021-01-26T03:16:12.000Z</published>
+    <updated>2021-01-24T13:26:22.159Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;亚马逊白嫖12个月服务器并设置内网穿透&quot;&gt;&lt;a href=&quot;#亚马逊白嫖12个月服务器并设置内网穿透&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="server" scheme="https://xjw1996.github.io/jingwei.github.io/categories/server/"/>
+    
+    
+    <category term="frp" scheme="https://xjw1996.github.io/jingwei.github.io/tags/frp/"/>
+    
+  </entry>
   
   <entry>
     <title>基于renren-fast开发，负载均衡缺少pom文件大坑</title>
@@ -43,36 +68,11 @@
   </entry>
   
   <entry>
-    <title>亚马逊白嫖12个月服务器并设置内网穿透</title>
-    <link href="https://xjw1996.github.io/jingwei.github.io/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/"/>
-    <id>https://xjw1996.github.io/jingwei.github.io/2021/01/06/ya-ma-xun-bai-piao-fu-wu-qi-bing-she-zhi-nei-wang-chuan-tou/</id>
-    <published>2021-01-06T03:16:12.000Z</published>
-    <updated>2021-01-24T13:10:45.564Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;亚马逊白嫖12个月服务器并设置内网穿透&quot;&gt;&lt;a href=&quot;#亚马逊白嫖12个月服务器并设置内网穿透&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="server" scheme="https://xjw1996.github.io/jingwei.github.io/categories/server/"/>
-    
-    
-    <category term="frp" scheme="https://xjw1996.github.io/jingwei.github.io/tags/frp/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MySQL编码问题的坑</title>
-    <link href="https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/"/>
-    <id>https://xjw1996.github.io/jingwei.github.io/2020/12/06/mysql-bian-ma-de-keng/</id>
-    <published>2020-12-06T03:16:12.000Z</published>
-    <updated>2021-01-24T12:26:22.033Z</updated>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2020/12/08/mysql-bian-ma-de-keng/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2020/12/08/mysql-bian-ma-de-keng/</id>
+    <published>2020-12-08T03:16:12.000Z</published>
+    <updated>2021-01-24T13:25:34.861Z</updated>
     
     
       
@@ -94,10 +94,10 @@
   
   <entry>
     <title>Ubuntu安装 NVIDIA Driver，CUDA, cuDNN</title>
-    <link href="https://xjw1996.github.io/jingwei.github.io/2020/04/06/ubuntu-an-zhuang/"/>
-    <id>https://xjw1996.github.io/jingwei.github.io/2020/04/06/ubuntu-an-zhuang/</id>
-    <published>2020-04-06T03:16:12.000Z</published>
-    <updated>2021-01-23T19:02:35.033Z</updated>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2020/04/20/ubuntu-an-zhuang/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2020/04/20/ubuntu-an-zhuang/</id>
+    <published>2020-04-20T03:16:12.000Z</published>
+    <updated>2021-01-24T13:25:51.332Z</updated>
     
     
       
@@ -122,10 +122,10 @@
   
   <entry>
     <title>Docker里面导入MySQL</title>
-    <link href="https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/"/>
-    <id>https://xjw1996.github.io/jingwei.github.io/2019/12/06/docker-mysql/</id>
-    <published>2019-12-06T03:16:12.000Z</published>
-    <updated>2021-01-23T19:04:10.309Z</updated>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2019/12/18/docker-mysql/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2019/12/18/docker-mysql/</id>
+    <published>2019-12-18T03:16:12.000Z</published>
+    <updated>2021-01-24T13:25:19.288Z</updated>
     
     
       
