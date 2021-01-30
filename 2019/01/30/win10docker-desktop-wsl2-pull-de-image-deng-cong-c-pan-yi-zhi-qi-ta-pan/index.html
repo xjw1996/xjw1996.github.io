@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker里面导入MySQL, Hexo">
+    <meta name="keywords" content="Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker里面导入MySQL | Hexo</title>
+    <title>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker里面导入MySQL</h1>
+                    <h1 class="description center-align post-title">Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</h1>
                 </div>
             </div>
         </div>
@@ -544,7 +544,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-18
+                    2019-01-30
                 </div>
                 
 
@@ -568,83 +568,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker-hub"><a href="#docker-hub" class="headerlink" title="docker hub"></a>docker hub</h1><ul>
-<li><p>下载MySQL镜像</p>
-<p><code>sudo docker pull mysql:5.7</code></p>
-</li>
-<li><p>检查下载好的镜像</p>
-<p><code>sudo docker images</code></p>
-</li>
-<li><p>切换root的用户</p>
-<p><code>su root</code></p>
-</li>
-<li><p>启动容器</p>
-<p>docker run -p 3306:3306 –name mysql \</p>
-</li>
-</ul>
-<blockquote>
-<p>-v /mydata/mysql/log:/var/log/mysql <br>-v /mydata/mysql/data:/var/lib/mysql <br>-v /mydata/mysql/conf:/etc/mysql <br>-e MYSQL_ROOT_PASSWORD=root <br>-d mysql:5.7</p>
-</blockquote>
-<pre><code>-p 3306:3306为端口映射</code></pre>
-<p>-v 是目录挂载 具体意思是在本体linux下的/mydata/mysql/log  ：冒号就是与容器内部的/var/log/mysql进行挂载，直白的说容器内部log文件的记录 会直接反应到linux指定目录下，容器内不的日志，linux在外面也能够看到</p>
-<p><img src="https://img-blog.csdnimg.cn/20210120010836980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<p>如上图所示，MySQL容器挂载的各个log，数据，配置文件dg在外面root linux里面也是可以访问到的，容器外部对挂载文件直接修改，是可以同步到容器</p>
+                <h1 id="Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘"><a href="#Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘" class="headerlink" title="Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘"></a>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</h1><h2 id="缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择"><a href="#缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择" class="headerlink" title="缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择"></a>缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl -l -v --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20210130201404860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
 <ul>
-<li><p>查看docker运行中的容器</p>
-<p><code>docker ps</code></p>
+<li>docker-desktop是存放程序的</li>
+<li>docker-desktop-data是存放镜像的</li>
+</ul>
+<h2 id="Clean-Purge-data-删除镜像-wsl-hyperv"><a href="#Clean-Purge-data-删除镜像-wsl-hyperv" class="headerlink" title="Clean/Purge data  删除镜像 wsl hyperv"></a>Clean/Purge data  删除镜像 wsl hyperv</h2><p><img src="https://img-blog.csdnimg.cn/20210130201625903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
+<h2 id="打包wsl系统镜像"><a href="#打包wsl系统镜像" class="headerlink" title="打包wsl系统镜像"></a>打包wsl系统镜像</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --export docker-desktop docker-desktop.tar
+$ wsl --export docker-desktop-data docker-desktop-data.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2021013020181257.png"></p>
+<h2 id="解除现有登录的wsl子系统"><a href="#解除现有登录的wsl子系统" class="headerlink" title="解除现有登录的wsl子系统"></a>解除现有登录的wsl子系统</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --unregister docker-desktop
+$ wsl --unregister docker-desktop-data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="把刚刚打包过的系统文件，导入到自己想要的盘下面"><a href="#把刚刚打包过的系统文件，导入到自己想要的盘下面" class="headerlink" title="把刚刚打包过的系统文件，导入到自己想要的盘下面"></a>把刚刚打包过的系统文件，导入到自己想要的盘下面</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --import docker-desktop d:<span class="token punctuation">\</span>your-install-path docker-desktop.tar
+$ wsl --import docker-desktop-data d:<span class="token punctuation">\</span>your-install-path docker-desktop-data.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2021013020214070.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
+<ul>
+<li><p><strong>这个地方需要注意</strong>，如果把docker-desktop和docker-desktop-data导入到一个文件夹里面会失败，导入到两个名字不同的文件夹里就OK了，然后重启<strong>docker desktop</strong></p>
 </li>
-<li><p>进入MySQL容器内部</p>
-<ul>
-<li><code>docker exec -it docker容器的前三位id\或者容器的名字 /bin/bash</code></li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/2021012001085931.png"></p>
-<ul>
-<li>就会发现我们进入容器内部的环境当中，因为每一个容器都是一个小型的linux系统，如上图为哦们已经进入到MySQL容器的内部</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20210120010917607.png"></p>
+<li><p><img src="https://img-blog.csdnimg.cn/20210130202401881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
+<h2 id="Pull一个镜像试一试，看看C盘的存储增不增加"><a href="#Pull一个镜像试一试，看看C盘的存储增不增加" class="headerlink" title="Pull一个镜像试一试，看看C盘的存储增不增加"></a>Pull一个镜像试一试，看看C盘的存储增不增加</h2><p>Pull一个ROS的镜像，大概有两三个G大小<br><img src="https://img-blog.csdnimg.cn/20210130202555124.png"><br>我们先看一下，<strong>F盘</strong>下的存储docker image的地方，存储有没有增加<br><img src="https://img-blog.csdnimg.cn/20210130202924280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202936112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202945608.png"></p>
 </li>
-</ul>
-<ul>
-<li>查看目录结构会发现，他就是一个完整的一个linux的目录结构</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20210120011025911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<ul>
-<li><p>查看MySQL装在了那个位置</p>
-<p><code>whereis mysql</code><br><img src="https://img-blog.csdnimg.cn/20210120011051134.png" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uuUv48u2-1611076069706)(C:\Users\jinue\AppData\Roaming\Typora\typora-user-images\image-20201206041528226.png)]"></p>
-</li>
-<li><p>下图是docker容器文件挂载与端口映射<br><img src="https://img-blog.csdnimg.cn/20210120011126996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-</li>
-</ul>
-<p>访问linux的3306接口也就能够访问到MySQL容器的3306的端口</p>
-<p>cd conf      vi my.cnf</p>
-<ul>
-<li>复制下面配置文件</li>
-</ul>
-<p>[client]</p>
-<p>default-character-set=utf8</p>
-<p>[mysql]</p>
-<p>default-character-set=utf8</p>
-<p>[mysqld]</p>
-<p>init_connect=’SET collation_connection = utf8_unicode_ci’</p>
-<p>init_connect=’SET NAMES utf8’</p>
-<p>character-set-server=utf8</p>
-<p>collation-server=utf8_unicode_ci</p>
-<p>skip-character-set-client-handshake</p>
-<p>skip-name-resolve</p>
-<p><img src="https://img-blog.csdnimg.cn/20210120011245615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<ul>
-<li><p>docker 重启mysql</p>
-<p><code>docker restart mysql</code></p>
-</li>
-</ul>
-<ul>
-<li><p>进入交互模式</p>
-<p><code>docker exec -it mysql /bin/bash</code></p>
-<p>查看linux上配置的文件是否同步到位</p>
-<ul>
-<li>进入MySQL内部查看配置</li>
-<li><code>mysql -u root -p</code></li>
-</ul>
+<li><p>由上可以见到，F盘随着pull的时间，储存量越来越多，C盘的存储却不会变，<strong>大吉大利，今晚吃鸡！！！！</strong> 嘎嘎嘎</p>
 </li>
 </ul>
 
@@ -673,7 +618,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2019/12/18/docker-mysql/">https://xjw1996.github.io/jingwei.github.io/2019/12/18/docker-mysql/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2019/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/">https://xjw1996.github.io/jingwei.github.io/2019/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -888,13 +833,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/20/ubuntu-an-zhuang/">
+                <a href="/2019/12/18/docker-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Ubuntu安装 NVIDIA Driver，CUDA, cuDNN">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
                         
-                        <span class="card-title">Ubuntu安装 NVIDIA Driver，CUDA, cuDNN</span>
+                        <span class="card-title">Docker里面导入MySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -905,14 +850,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                    Ubuntu
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
                                 </a>
                             
                             
@@ -922,8 +867,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -934,7 +879,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2019/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/">
@@ -968,6 +913,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
