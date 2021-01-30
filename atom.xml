@@ -6,7 +6,7 @@
   <link href="https://xjw1996.github.io/jingwei.github.io/atom.xml" rel="self"/>
   
   <link href="https://xjw1996.github.io/jingwei.github.io/"/>
-  <updated>2021-01-24T13:28:20.717Z</updated>
+  <updated>2021-01-30T12:40:52.341Z</updated>
   <id>https://xjw1996.github.io/jingwei.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</title>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2021/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2021/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/</id>
+    <published>2021-01-30T12:36:37.000Z</published>
+    <updated>2021-01-30T12:40:52.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘&quot;&gt;&lt;a href=&quot;#Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="https://xjw1996.github.io/jingwei.github.io/categories/docker/"/>
+    
+    
+    <category term="docker" scheme="https://xjw1996.github.io/jingwei.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>亚马逊白嫖12个月服务器并设置内网穿透</title>
@@ -135,31 +160,6 @@
     <summary type="html">&lt;h1 id=&quot;docker-hub&quot;&gt;&lt;a href=&quot;#docker-hub&quot; class=&quot;headerlink&quot; title=&quot;docker hub&quot;&gt;&lt;/a&gt;docker hub&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;下载MySQL镜像&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo</summary>
-        
-      
-    
-    
-    
-    <category term="docker" scheme="https://xjw1996.github.io/jingwei.github.io/categories/docker/"/>
-    
-    
-    <category term="docker" scheme="https://xjw1996.github.io/jingwei.github.io/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</title>
-    <link href="https://xjw1996.github.io/jingwei.github.io/2019/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/"/>
-    <id>https://xjw1996.github.io/jingwei.github.io/2019/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/</id>
-    <published>2019-01-30T12:36:37.000Z</published>
-    <updated>2021-01-30T12:36:55.197Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘&quot;&gt;&lt;a href=&quot;#Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘&quot; class=&quot;headerlink&quot;</summary>
         
       
     
