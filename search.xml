@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git的使用方法</title>
+      <link href="2021/05/15/git-de-yong-fa/"/>
+      <url>2021/05/15/git-de-yong-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-简单使用方法"><a href="#git-简单使用方法" class="headerlink" title="git 简单使用方法"></a>git 简单使用方法</h1><ul><li><p>从自己电脑上传代码到github</p></li><li><p><img src="https://img-blog.csdnimg.cn/2021051501291033.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="git"></p></li><li><p>代码的追加以及更新,会出现以下错误</p><pre class="line-numbers language-none"><code class="language-none">git push origin mastererror: src refspec master does not match anyerror: failed to push some refs to 'git@github.com:user-name/repository-name.git'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><font color="#dd0000"><strong>error: src refspec master does not match any</strong></font><br></p></li><li><p>需要做的是，检查是否<font color="#dd0000"><strong>commit</strong></font><br></p></li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> 文件名<span class="token function">git</span> commit -m <span class="token string">'提交版本信息'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ul><li><p>如果做出上述，还是出现了<font color="#dd0000"><strong>error</strong></font><br></p><p>这是因为GIthub的master branch 变成了 main branch</p><p>所以以下代码解决问题</p></li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#解決</span><span class="token function">git</span> checkout main<span class="token function">git</span> pull origin main <span class="token comment">#把github的代码pull到本地</span><span class="token function">git</span> push origin main <span class="token comment">#上传自己的新代码文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><font color="#dd0000"><strong>更新前</strong></font><br><img src="https://img-blog.csdnimg.cn/20210515023109518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p><p><font color="#dd0000"><strong>更新后</strong></font><br></p><p><img src="https://img-blog.csdnimg.cn/20210515023124717.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p><p>可以看到，从local电脑里更新到github上的文件</p><ul><li>具体电脑上运行的流程，以及出错的代码如下</li></ul><p><img src="https://img-blog.csdnimg.cn/20210515012937414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</title>
       <link href="2021/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/"/>
       <url>2021/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/</url>
