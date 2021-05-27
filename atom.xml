@@ -6,7 +6,7 @@
   <link href="https://xjw1996.github.io/jingwei.github.io/atom.xml" rel="self"/>
   
   <link href="https://xjw1996.github.io/jingwei.github.io/"/>
-  <updated>2021-05-14T18:35:04.623Z</updated>
+  <updated>2021-05-27T09:01:47.603Z</updated>
   <id>https://xjw1996.github.io/jingwei.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git的使用方法</title>
+    <link href="https://xjw1996.github.io/jingwei.github.io/2021/05/27/yolov5/"/>
+    <id>https://xjw1996.github.io/jingwei.github.io/2021/05/27/yolov5/</id>
+    <published>2021-05-26T20:05:26.000Z</published>
+    <updated>2021-05-27T09:01:47.603Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;YOLOV5-简单的理解和迁移学习的思路-1&quot;&gt;&lt;a href=&quot;#YOLOV5-简单的理解和迁移学习的思路-1&quot; class=&quot;headerlink&quot; title=&quot;YOLOV5 简单的理解和迁移学习的思路  (1)&quot;&gt;&lt;/a&gt;YOLOV5</summary>
+        
+      
+    
+    
+    
+    <category term="YOLO" scheme="https://xjw1996.github.io/jingwei.github.io/categories/YOLO/"/>
+    
+    
+    <category term="YOLO" scheme="https://xjw1996.github.io/jingwei.github.io/tags/YOLO/"/>
+    
+  </entry>
   
   <entry>
     <title>git的使用方法</title>
