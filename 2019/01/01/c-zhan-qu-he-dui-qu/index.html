@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="C++栈区和堆区, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>C++栈区和堆区 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">C++栈区和堆区</h1>
                 </div>
             </div>
         </div>
@@ -517,12 +517,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -531,7 +544,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-16
+                    2019-01-01
                 </div>
                 
 
@@ -555,18 +568,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-none"><code class="language-none">title: C++栈区和堆区
-date: 2019-01-01 13:05:30
-categories: C++
-tags:
-- C++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h1 id="C-栈区和堆区"><a href="#C-栈区和堆区" class="headerlink" title="C++栈区和堆区"></a>C++栈区和堆区</h1><h1 id="1-栈区"><a href="#1-栈区" class="headerlink" title="1.栈区"></a>1.栈区</h1><ul>
+                <h1 id="C-栈区和堆区"><a href="#C-栈区和堆区" class="headerlink" title="C++栈区和堆区"></a>C++栈区和堆区</h1><h1 id="1-栈区"><a href="#1-栈区" class="headerlink" title="1.栈区"></a>1.栈区</h1><ul>
 <li><h2 id="局部变量-存放在栈区，栈取的数据在函数执行完之后自动释放"><a href="#局部变量-存放在栈区，栈取的数据在函数执行完之后自动释放" class="headerlink" title="局部变量 存放在栈区，栈取的数据在函数执行完之后自动释放"></a>局部变量 存放在栈区，栈取的数据在函数执行完之后自动释放</h2></li>
-<li><h2 id="栈区的数据由编译器管理开启和释放"><a href="#栈区的数据由编译器管理开启和释放" class="headerlink" title="栈区的数据由编译器管理开启和释放"></a>栈区的数据由编译器管理开启和释放</h2></li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int* func(int b)//形参也会存放在盏区
+<li><h2 id="栈区的数据由编译器管理开启和释放"><a href="#栈区的数据由编译器管理开启和释放" class="headerlink" title="栈区的数据由编译器管理开启和释放"></a>栈区的数据由编译器管理开启和释放</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int* func(int b)//形参也会存放在盏区
 {
     b=100;
 	int a = 10;
@@ -583,6 +587,10 @@ int main(){
 
 
 
+
+
+</li>
+</ul>
 <h1 id="2-堆区"><a href="#2-堆区" class="headerlink" title="2.堆区"></a>2.堆区</h1><ul>
 <li><h2 id="由程序员分配释放，若程序员不释放内存，程序结束的时候有操作系统回收"><a href="#由程序员分配释放，若程序员不释放内存，程序结束的时候有操作系统回收" class="headerlink" title="由程序员分配释放，若程序员不释放内存，程序结束的时候有操作系统回收"></a>由程序员分配释放，若程序员不释放内存，程序结束的时候有操作系统回收</h2></li>
 <li><h2 id="在C-中主要利用new在堆区开辟内存"><a href="#在C-中主要利用new在堆区开辟内存" class="headerlink" title="在C++中主要利用new在堆区开辟内存"></a>在C++中主要利用new在堆区开辟内存</h2></li>
@@ -682,7 +690,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/09/16/c-zhan-qu-he-dui-qu/">https://xjw1996.github.io/jingwei.github.io/2021/09/16/c-zhan-qu-he-dui-qu/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2019/01/01/c-zhan-qu-he-dui-qu/">https://xjw1996.github.io/jingwei.github.io/2019/01/01/c-zhan-qu-he-dui-qu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -719,7 +727,11 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -889,56 +901,17 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2021/09/16/c-zhan-qu-he-dui-qu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Xue Jingwei
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/14/ri-ben-ji-qi-ren-xue-hui-fa-biao-2021-9/">
+                <a href="/2019/12/18/docker-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="日本机器人学术线上发表">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker里面导入MySQL">
                         
-                        <span class="card-title">日本机器人学术线上发表</span>
+                        <span class="card-title">Docker里面导入MySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -948,13 +921,17 @@ int main(){
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Xue Jingwei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -962,8 +939,58 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BA%BF%E4%B8%8A%E5%8F%91%E8%A1%A8/">
-                        <span class="chip bg-color">线上发表</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/01/01/c-zhan-qu-he-dui-qu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="C++栈区和堆区">
+                        
+                        <span class="card-title">C++栈区和堆区</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
