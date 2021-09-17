@@ -540,7 +540,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-17
+                    2021-02-17
                 </div>
                 
 
@@ -602,15 +602,15 @@
 wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
 
 bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果安装成功 ，基于本地的服务器的公网IP地址和账号被自动的显示在终端上面。</p>
+<p>如果安装成功 ，基于本地的服务器的公网IP地址和账号被自动显示在终端上面。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133613795-bda2e6da-d7e3-491b-a6bf-2b59674c2760.png"></p>
-<p>如果通过公网ip地址访问不到宝塔页面，会有下面红字的英文提示。</p>
+<p>如果通过公网ip地址访问不到宝塔页面，会有下面红字英文提示。</p>
 <p><font color="red"> If you cannot access the panel, release the following port [8888] in the security group</font></p>
-<p>代表你得开放8888端口</p>
+<p>说明你需要开放8888端口。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133617258-bd514e31-e687-42ca-ab5a-afb3142f5980.png"></p>
-<p>进去以后一键安装所需要的东西</p>
+<p>进去以后，一键安装所需要的东西。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133620213-62945ca0-c6f5-4dcc-a484-9bd9df5f15cc.png"></p>
-<p>所有东西安装好以后，点击软件商店，选择宝塔商店，选择宝塔一键部署源码</p>
+<p>所有程序安装好以后，点击软件商店，选择宝塔商店，选择宝塔一键部署源码。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133627066-79090fbb-b4ce-4262-8120-e2a653d0aa1e.png"></p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133627202-39fdc05d-9e11-4e63-9bb0-8562e99ce120.png"></p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133632592-75c78c7a-efba-4f90-bce1-92866de275c1.png"></p>
@@ -619,22 +619,22 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
 <p><img src="https://user-images.githubusercontent.com/50350039/133634567-6ea01e06-bd33-4a43-8840-a275e6dab140.png"></p>
 </li>
 </ul>
-<h1 id="域名的解析"><a href="#域名的解析" class="headerlink" title="域名的解析"></a>域名的解析</h1><p>注册后的域名还不能用，还得需要解析才能在公网访问的到，所以这里域名的解析我选择<font color="red">&nbsp;CLOUDFLARE</font>，为什么推荐使用CLOUDFLARE，它本身有一个特别大的优势，他有免费的DNS服务，DNS服务可以隐藏你的VPS的IP，另一方面可以救活你被墙的VPS的IP，如果你VPSIP被墙的话的你的网页是不可以在中国国内被访问到的，但是你套上Cloudflare免费 的DNS，就可以正常访问啦！！！</p>
+<h1 id="域名的解析"><a href="#域名的解析" class="headerlink" title="域名的解析"></a>域名的解析</h1><p>注册后的域名还不能用，还得需要解析才能在公网访问到，所以这里域名的解析我选择<font color="red">&nbsp;CLOUDFLARE</font>。为什么推荐使用CLOUDFLARE？因为它本身有一个特别大的优势-因为它有免费的DNS服务，DNS服务可以隐藏你的VPS的IP。另一方面，还可以救活你被“墙”的VPS的IP。如果你VPS的IP被“墙”，你的网页是不能在中国国内被访问到的。但是你套上Cloudflare免费 的DNS，就可以正常访问啦！！！</p>
 <p>点击蓝字连接域名解析网址<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/hp/">CLOUDFLARE</a></p>
-<p>进入CLOUDFLARE之后注册很简单</p>
+<p>进入CLOUDFLARE之后注册很简单。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133640107-92434d14-e431-480f-9d05-33c4b170cce7.png"></p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133640297-f4f80aca-ba74-4962-832b-f1f50175ded6.png"></p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133642092-da3d406b-0d76-4c24-b56b-32a56e79f1a6.png"></p>
-<p>在如上步骤完成之后，需要去到你注册域名的地方，把nameservers更改成cloudflare的namespace</p>
+<p>如上步骤完成之后，需要到你注册域名的地方，把nameservers更改成cloudflare的namespaces。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133732824-e1745cb7-f337-4232-986e-44de92f57952.png"></p>
-<p>之后就会看到，你的域名处于激活状态</p>
+<p>之后就会看到，你的域名处于激活状态。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133732990-99f9d27d-9e17-4c7a-836f-b25e9214fbb4.png"></p>
-<h1 id="回到宝塔页面部署wordpres-在部署之前需要在云服务器上面开放端口，比如http的端口"><a href="#回到宝塔页面部署wordpres-在部署之前需要在云服务器上面开放端口，比如http的端口" class="headerlink" title="回到宝塔页面部署wordpres,在部署之前需要在云服务器上面开放端口，比如http的端口"></a>回到宝塔页面部署wordpres,在部署之前需要在云服务器上面开放端口，比如http的端口</h1><p>不开放端口的话，我即使安装好了wordpress也打不开页面。</p>
+<h1 id="回到宝塔页面安装wordpres-在安装之前需要在云服务器上面开放端口，比如http的端口。"><a href="#回到宝塔页面安装wordpres-在安装之前需要在云服务器上面开放端口，比如http的端口。" class="headerlink" title="回到宝塔页面安装wordpres,在安装之前需要在云服务器上面开放端口，比如http的端口。"></a>回到宝塔页面安装wordpres,在安装之前需要在云服务器上面开放端口，比如http的端口。</h1><p>如果不开放端口，你即使安装好了wordpress也打不开页面。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133733470-393b1611-e133-44bb-86fa-8c0d7df4dff8.png"></p>
 <p>一般常见端口：80端口-http，443端口-https，8888端口-宝塔，888端口-宝塔phpmyadmin，22端口-ssh，3389端口-RDPwin远程桌面，3306端口-mysql。</p>
-<p>我们申请的域名,以xjwzhenshuai.com这样的域名举例子，我是想让无论是www.的还是不带www.都能在浏览器页面上搜索访问的到。在解析的时候要把这两给都做好A类DNS解析，在一键搭建wordpress时候需要把这带www和不带www的都填进去。如下图所示</p>
+<p>我们申请的域名,以xjwzhenshuai.com这样的域名举例子，我是想让无论是www.的还是不带www.都能在浏览器页面上搜索访问到。在解析的时候要把这两个都做好A类DNS解析，在一键搭建wordpress时，需要把带www和不带www的都填进去。如下图所示：</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133735607-27c1b496-ac2d-463c-ba17-775a325ecfe2.png"></p>
-<p>到此为止  终于可以进入网站内容的开发和设置了</p>
+<p>到此为止  终于可以进入网站内容的开发和设置了。</p>
 <p><img src="https://user-images.githubusercontent.com/50350039/133735868-6ef34f67-904a-408f-8ce4-16cb36c4b2cc.png"></p>
 
                 
@@ -662,7 +662,7 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/09/17/dui-yun-fu-wu-qi-de-xuan-gou/">https://xjw1996.github.io/jingwei.github.io/2021/09/17/dui-yun-fu-wu-qi-de-xuan-gou/</a>
+                    <a href="https://xjw1996.github.io/jingwei.github.io/2021/02/17/dui-yun-fu-wu-qi-de-xuan-gou/">https://xjw1996.github.io/jingwei.github.io/2021/02/17/dui-yun-fu-wu-qi-de-xuan-gou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -869,18 +869,17 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/17/dui-yun-fu-wu-qi-de-xuan-gou/">
+                <a href="/2021/05/15/git-de-yong-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="对云服务器的选购">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="git的使用方法">
                         
-                        <span class="card-title">对云服务器的选购</span>
+                        <span class="card-title">git的使用方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -890,22 +889,29 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/AWS-Server/" class="post-category">
-                                    AWS Server
+                            <a href="/categories/git/" class="post-category">
+                                    git
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -916,13 +922,13 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/14/ri-ben-ji-qi-ren-xue-hui-fa-biao-2021-9/">
+                <a href="/2021/01/30/win10docker-desktop-wsl2-pull-de-image-deng-cong-c-pan-yi-zhi-qi-ta-pan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="日本机器人学术线上发表">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘">
                         
-                        <span class="card-title">日本机器人学术线上发表</span>
+                        <span class="card-title">Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -933,12 +939,16 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Xue Jingwei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -946,8 +956,8 @@ bt restart//重启面板<span aria-hidden="true" class="line-numbers-rows"><span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BA%BF%E4%B8%8A%E5%8F%91%E8%A1%A8/">
-                        <span class="chip bg-color">线上发表</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
