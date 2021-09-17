@@ -568,28 +568,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘"><a href="#Win10Docker-Desktop-WSL2-pull的image等从C盘移植其他盘" class="headerlink" title="Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘"></a>Win10Docker Desktop(WSL2) pull的image等从C盘移植其他盘</h1><h2 id="缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择"><a href="#缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择" class="headerlink" title="缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择"></a>缘由：由于c系统盘储存空间有限，Docker的桌面版有默认安装在C盘，在这么下去电脑该用不了了，移植其他盘是唯一的选择</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl -l -v --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Win10Docker-Desktop-WSL2-pull的image等从C盘移动到其它盘"><a href="#Win10Docker-Desktop-WSL2-pull的image等从C盘移动到其它盘" class="headerlink" title="Win10Docker Desktop(WSL2) pull的image等从C盘移动到其它盘"></a>Win10Docker Desktop(WSL2) pull的image等从C盘移动到其它盘</h1><p>缘由：由于c系统盘储存空间有限，Docker的桌面版默认安装在C盘，长此以往电脑储存空间就会不够用，把c盘Docker的文件移动到其他盘是唯一的选择。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl -l -v --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20210130201404860.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
 <ul>
 <li>docker-desktop是存放程序的</li>
 <li>docker-desktop-data是存放镜像的</li>
 </ul>
-<h2 id="Clean-Purge-data-删除镜像-wsl-hyperv"><a href="#Clean-Purge-data-删除镜像-wsl-hyperv" class="headerlink" title="Clean/Purge data  删除镜像 wsl hyperv"></a>Clean/Purge data  删除镜像 wsl hyperv</h2><p><img src="https://img-blog.csdnimg.cn/20210130201625903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="打包wsl系统镜像"><a href="#打包wsl系统镜像" class="headerlink" title="打包wsl系统镜像"></a>打包wsl系统镜像</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --export docker-desktop docker-desktop.tar
+<h2 id="1-Clean-Purge-data-删除镜像-wsl-hyperv"><a href="#1-Clean-Purge-data-删除镜像-wsl-hyperv" class="headerlink" title="(1)Clean/Purge data  删除镜像 wsl hyperv"></a>(1)Clean/Purge data  删除镜像 wsl hyperv</h2><p><img src="https://img-blog.csdnimg.cn/20210130201625903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
+<h2 id="2-打包wsl系统镜像"><a href="#2-打包wsl系统镜像" class="headerlink" title="(2)打包wsl系统镜像"></a>(2)打包wsl系统镜像</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --export docker-desktop docker-desktop.tar
 $ wsl --export docker-desktop-data docker-desktop-data.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2021013020181257.png"></p>
-<h2 id="解除现有登录的wsl子系统"><a href="#解除现有登录的wsl子系统" class="headerlink" title="解除现有登录的wsl子系统"></a>解除现有登录的wsl子系统</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --unregister docker-desktop
+<h2 id="3-解除现有登录的wsl子系统"><a href="#3-解除现有登录的wsl子系统" class="headerlink" title="(3)解除现有登录的wsl子系统"></a>(3)解除现有登录的wsl子系统</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --unregister docker-desktop
 $ wsl --unregister docker-desktop-data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="把刚刚打包过的系统文件，导入到自己想要的盘下面"><a href="#把刚刚打包过的系统文件，导入到自己想要的盘下面" class="headerlink" title="把刚刚打包过的系统文件，导入到自己想要的盘下面"></a>把刚刚打包过的系统文件，导入到自己想要的盘下面</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --import docker-desktop d:<span class="token punctuation">\</span>your-install-path docker-desktop.tar
+<h2 id="4-把刚刚打包过的系统文件，导入到自己想要的盘下面"><a href="#4-把刚刚打包过的系统文件，导入到自己想要的盘下面" class="headerlink" title="(4)把刚刚打包过的系统文件，导入到自己想要的盘下面"></a>(4)把刚刚打包过的系统文件，导入到自己想要的盘下面</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ wsl --import docker-desktop d:<span class="token punctuation">\</span>your-install-path docker-desktop.tar
 $ wsl --import docker-desktop-data d:<span class="token punctuation">\</span>your-install-path docker-desktop-data.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2021013020214070.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
 <ul>
-<li><p><strong>这个地方需要注意</strong>，如果把docker-desktop和docker-desktop-data导入到一个文件夹里面会失败，导入到两个名字不同的文件夹里就OK了，然后重启<strong>docker desktop</strong></p>
+<li><p><strong>这里需要注意：</strong>，请不要把docker-desktop和docker-desktop-data同时放到同一个文件夹里面，导入到两个名字不同的文件夹里就OK了，然后重启<strong>docker desktop</strong>。如上图所示。</p>
 </li>
 <li><p><img src="https://img-blog.csdnimg.cn/20210130202401881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="Pull一个镜像试一试，看看C盘的存储增不增加"><a href="#Pull一个镜像试一试，看看C盘的存储增不增加" class="headerlink" title="Pull一个镜像试一试，看看C盘的存储增不增加"></a>Pull一个镜像试一试，看看C盘的存储增不增加</h2><p>Pull一个ROS的镜像，大概有两三个G大小<br><img src="https://img-blog.csdnimg.cn/20210130202555124.png"><br>我们先看一下，<strong>F盘</strong>下的存储docker image的地方，存储有没有增加<br><img src="https://img-blog.csdnimg.cn/20210130202924280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202936112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202945608.png"></p>
+<h2 id="Pull一个镜像试一试，看看C盘的存储是否增加"><a href="#Pull一个镜像试一试，看看C盘的存储是否增加" class="headerlink" title="Pull一个镜像试一试，看看C盘的存储是否增加"></a>Pull一个镜像试一试，看看C盘的存储是否增加</h2><p>Pull一个ROS的镜像，大小有3个G左右。<br><img src="https://img-blog.csdnimg.cn/20210130202555124.png"><br>我们先看一下，<strong>F盘</strong>下的存储docker image的地方，存储是否增加。<br><img src="https://img-blog.csdnimg.cn/20210130202924280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202936112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTI0MzQ4Ng==,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20210130202945608.png"></p>
 </li>
-<li><p>由上可以见到，F盘随着pull的时间，储存量越来越多，C盘的存储却不会变，<strong>大吉大利，今晚吃鸡！！！！</strong> 嘎嘎嘎</p>
+<li><p>由上图可以见到，F盘随着pull的时间，储存量越来越多，C盘的存储却不会变，<strong>大吉大利，今晚吃鸡！！！！</strong> 嘎嘎嘎</p>
 </li>
 </ul>
 
